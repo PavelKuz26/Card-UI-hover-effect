@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --clr: #222;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--clr);    
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+.card{
+    position: relative;
+    width: 340px;
+    height: 360px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+}
+.imgBx{
+    position: absolute;
+    inset: 20px 20px 50px 20px;
+    border-radius: 15px;
+    transition: .5s;
+}
+.card:hover .imgBx{
+    inset: -50px 20px 250px 20px;
+}
+.card:hover .imgBx__blue{
+    box-shadow: 0 0 0 10px #02c1fc;
+}
+.card:hover .imgBx__green{
+    box-shadow: 0 0 0 10px #34fc02;
+}
+.card:hover .imgBx__yellow{
+    box-shadow: 0 0 0 10px #f5f82b;
+}
+
+.card:hover .imgBx::before{
+    opacity: 1;
+    transform: translateY(30px);
+}
+.img{
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card:hover{
+    height: 380px;
+}
+.text{
+    position: relative;
+    padding: 40px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50px);
+    transition: .5s;
+}
+.card:hover .text{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(38px);
+}
+.title{
+    position: absolute;
+    bottom: 8px;
+    color: #333;
+    text-transform: uppercase;
+    transition: .5s;
+}
+.card:hover .title{
+    padding: 6px 24px;
+    background: #02c1fc;
+    border-radius: 8px;
+    bottom: -24px;
+    box-shadow: 0 0 0 10px var(--clr);
+}
+.card:hover .title__blue{
+    background: #02c1fc;
+}
+.card:hover .title__green{
+    background: #34fc02;
+}
+.card:hover .title__yellow{
+    background: #f5f82b;
+}
